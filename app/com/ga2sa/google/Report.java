@@ -143,7 +143,7 @@ public class Report {
 			
 			BufferedWriter bw = new BufferedWriter(new FileWriter(csv));
 
-			String header = StringUtils.join(this.headers, "\",\"");
+			String header = StringUtils.join(this.headers, ",");
 
 			bw.write(header);
 			bw.newLine();
@@ -199,7 +199,7 @@ public class Report {
 					
 					try {
 						bw.write(StringUtils.join(row.toArray(), "\",\""));
-						Logger.debug("# " + StringUtils.join(row.toArray(), "\",\""));
+						Logger.debug("# " + StringUtils.join(row.toArray(), ","));
 						bw.newLine();
 					} catch (Exception e) {
 						e.printStackTrace();
