@@ -156,7 +156,7 @@ public class Report {
 					});
 					
 					try {
-						bw.write(StringUtils.join(row.toArray(), "\",\""));
+						bw.write("\"" + StringUtils.join(row.toArray(), "\",\"") + "\"");
 						bw.newLine();
 					} catch (Exception e) {
 						e.printStackTrace();
@@ -198,7 +198,7 @@ public class Report {
 					});
 					
 					try {
-						bw.write(StringUtils.join(row.toArray(), "\",\""));
+						bw.write("\"" + StringUtils.join(row.toArray(), "\",\"") + "\"");
 						Logger.debug("# " + StringUtils.join(row.toArray(), ","));
 						bw.newLine();
 					} catch (Exception e) {
