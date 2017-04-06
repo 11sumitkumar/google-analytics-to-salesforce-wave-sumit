@@ -1,0 +1,125 @@
+.navbar {
+	border-radius: 0;
+	border: none;
+	color: #fff;
+}
+
+.navbar-default .navbar-header {
+	padding:0 15px;
+	float:none;
+	background-color:#fff;
+	border-bottom:1px solid #d3dddf;
+}
+.navbar-brand {
+	display:block;
+	text-indent:-500px;
+	overflow:hidden;
+	margin:10px 0 0 0;
+	width:126px;
+	height:30px;
+	background: url('/assets/images/logo-small.png') no-repeat 0 0;
+}
+.navbar-title {
+	height:50px;
+	line-height:48px;
+	padding-left:50px;
+	background: url('/assets/images/corner.png') no-repeat 15px 0;
+}
+
+
+
+
+
+
+.navbar-default .navbar-toggle {
+	border:none;
+	padding:0;
+	margin:0;
+	border-radius:0;
+}
+.navbar-default .navbar-toggle,
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+	color: #fff;
+	background: @nav-bgcolor;
+}
+.navbar-default .navbar-toggle.collapsed {
+	background:none;
+	color: @nav-bgcolor;
+}
+
+.navbar-default .navbar-toggle .fa {
+	font-size:36px;
+	width:56px;
+	height:50px;
+	line-height:50px;
+	text-align:center;
+}
+
+
+
+.navbar-default .navbar-nav > li > a {
+	font-size:14px;
+	padding:15px;
+	color: @nav-color;
+}
+.navbar-default .navbar-nav > li > a:hover, 
+.navbar-default .navbar-nav > li > a:focus {
+	color: #fff;
+	background:none;
+}
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+	color: @nav-active-color;
+	background-color: @nav-active-bgcolor;
+}
+
+
+.navbar-default .navbar-collapse {
+	background-color: @nav-bgcolor;
+}
+.navbar-default .navbar-collapse.in, 
+.navbar-default .navbar-collapse.collapsing, 
+.navbar-default .navbar-form {
+	margin-top:-1px;
+	border: none;
+	-webkit-box-shadow:none;
+	box-shadow:none;
+}
+
+
+
+@media only screen and (min-width : 768px) {
+	.navbar-default .navbar-header {
+		border:none;
+	}
+	.navbar-default .navbar-nav > li > a {
+		padding:0 40px;
+		height:40px;
+		line-height:40px;
+	}
+}
+@media only screen and (max-width : 670px) {
+	.navbar-brand {
+		width:28px;
+		height:30px;
+		background: url('/assets/images/logo-sign.png') no-repeat 0 0;
+	}
+	.navbar-title {
+		padding-left:30px;
+		background-position:5px 0;
+	}
+}
+@media only screen and (max-width : 440px) {
+	.navbar-default .navbar-header {
+		padding-right:0;
+	}
+	.navbar-title {
+		line-height:20px;
+		padding-top:4px;
+	}
+	.navbar-title span {
+		display:block;
+	}
+}

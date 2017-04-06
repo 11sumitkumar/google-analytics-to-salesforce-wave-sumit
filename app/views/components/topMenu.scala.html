@@ -1,0 +1,19 @@
+@(activePage: String)
+<nav class="navbar navbar-default">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-menu">
+		<i class="fa fa-navicon"></i>
+      </button>
+      <a class="navbar-brand" href="@routes.Application.index">Cervello</a>
+	  <span class="app-title navbar-title"><span>Google Analytics </span><span><i>to</i> Salesforce Wave</span></span>
+    </div>
+    <div class="collapse navbar-collapse" id="top-menu">
+      <ul class="nav navbar-nav">
+        <li @if(activePage == "dashboard") { class="active" }><a href="@routes.Dashboard.index">Dashboard</a></li>
+        <li @if(activePage == "settings")  { class="active" }><a href="@routes.Settings.index">Settings</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="@routes.Authorization.ga2saSignOut">Logout</a></li>
+      </ul>
+    </div>
+</nav>
