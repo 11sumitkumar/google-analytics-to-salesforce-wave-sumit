@@ -156,10 +156,13 @@ public class Report {
 					});
 					
 					try {
-					
-						bw.write(StringUtils.join(formatRow(row.toArray()), ","));
+						String strDataRow = StringUtils.join(formatRow(row.toArray()), ",");
+						if(strDataRow.Trim() != "" || strDataRow.Trim() != ","){
+							bw.write(strDataRow);
+							bw.newLine();
+						}
 						//bw.write(StringUtils.join(row.toArray(), "\",\"") + "\"");
-						bw.newLine();
+						
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
@@ -200,10 +203,12 @@ public class Report {
 					});
 					
 					try {
-						bw.write(StringUtils.join(formatRow(row.toArray()), ","));
-						//bw.write("\"" + StringUtils.join(row.toArray(), "\",\"") + "\"");
-						Logger.debug("# " + StringUtils.join(row.toArray(), ","));
-						bw.newLine();
+						String strDataRow = StringUtils.join(formatRow(row.toArray()), ",");
+						if(strDataRow.Trim() != "" || strDataRow.Trim() != ","){
+							bw.write(strDataRow);
+							bw.newLine();
+						}
+						//bw.write(StringUtils.join(row.toArray(), "\",\"") + "\"");
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
