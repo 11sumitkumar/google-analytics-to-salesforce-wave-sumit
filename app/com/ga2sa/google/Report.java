@@ -229,10 +229,11 @@ public class Report {
 		return year + "-" + month + "-" + day;
 	}
 	
-	public String[] formatRow(String[] arrString){
-		ArrayList<String> sl = new ArrayList<String>();
+	public Object[] formatRow(Object[] arrString){
+		ArrayList<Object> sl = new ArrayList<Object>();
         if(arrString != null){
 			for (int i = 0; i < arrString.length; i++) {
+				
 				if(isNumeric(arrString[i])) sl.add(arrString[i]);
 				else sl.add("\"" + arrString[i] + "\""); 
 			}
