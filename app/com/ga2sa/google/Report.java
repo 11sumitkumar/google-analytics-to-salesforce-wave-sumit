@@ -234,7 +234,7 @@ public class Report {
         if(arrString != null){
 			for (int i = 0; i < arrString.length; i++) {
 				
-				if(isNumeric(arrString[i])) sl.add(arrString[i]);
+				if(isNumeric(arrString[i].toString())) sl.add(arrString[i]);
 				else sl.add("\"" + arrString[i] + "\"");
 			}
 		}
