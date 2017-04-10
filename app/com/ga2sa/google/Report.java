@@ -233,10 +233,11 @@ public class Report {
 		ArrayList<String> sl = new ArrayList<String>();
         if(arrString != null){
 			for (int i = 0; i < arrString.length; i++) {
-				if(isNumeric(s[i])) sl.add(s[i]);
-				else sl.add("\"" + s[i] + "\""); 
+				if(isNumeric(arrString[i])) sl.add(arrString[i]);
+				else sl.add("\"" + arrString[i] + "\""); 
 			}
 		}
+		return sl;
 	}
 	
 	public boolean isNumeric(String str){
