@@ -235,10 +235,10 @@ public class Report {
 			for (int i = 0; i < arrString.length; i++) {
 				
 				if(isNumeric(arrString[i])) sl.add(arrString[i]);
-				else sl.add("\"" + arrString[i] + "\""); 
+				else sl.add("\"" + arrString[i] + "\"");
 			}
 		}
-		return sl;
+		return sl.toArray(new String[sl.size()]);
 	}
 	
 	public boolean isNumeric(String str){
