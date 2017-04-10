@@ -156,7 +156,9 @@ public class Report {
 					});
 					
 					try {
-						bw.write("\"" + StringUtils.join(row.toArray(), "\",\"") + "\"");
+					
+						bw.write(StringUtils.join(formatRow(row.toArray()), ","));
+						//bw.write(StringUtils.join(row.toArray(), "\",\"") + "\"");
 						bw.newLine();
 					} catch (Exception e) {
 						e.printStackTrace();
@@ -198,7 +200,8 @@ public class Report {
 					});
 					
 					try {
-						bw.write("\"" + StringUtils.join(row.toArray(), "\",\"") + "\"");
+						bw.write(StringUtils.join(formatRow(row.toArray()), ","));
+						//bw.write("\"" + StringUtils.join(row.toArray(), "\",\"") + "\"");
 						Logger.debug("# " + StringUtils.join(row.toArray(), ","));
 						bw.newLine();
 					} catch (Exception e) {
@@ -224,6 +227,20 @@ public class Report {
 		String month = gaDate.substring(4, 6);
 		String day = gaDate.substring(6, 8);
 		return year + "-" + month + "-" + day;
+	}
+	
+	public String[] formatRow(String[] arrString){
+		ArrayList<String> sl = new ArrayList<String>();
+        if(arrString != null){
+			for (int i = 0; i < arrString.length; i++) {
+				if(isNumeric(s[i])) sl.add(s[i]);
+				else sl.add("\"" + s[i] + "\""); 
+			}
+		}
+	}
+	
+	public boolean isNumeric(String str){
+		return str.matches("-?\\d+(\\.\\d+)?");  //match a number with optional '-' and decimal.
 	}
 	
 	public static Report getReport(Job job) throws Exception {
