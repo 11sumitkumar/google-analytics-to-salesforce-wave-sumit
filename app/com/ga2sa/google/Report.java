@@ -157,7 +157,7 @@ public class Report {
 					
 					try {
 						String strDataRow = StringUtils.join(formatRow(row.toArray()), ",");
-						if(strDataRow.Trim() != "" || strDataRow.Trim() != ","){
+						if(strDataRow.trim() != "" || strDataRow.trim() != ","){
 							bw.write(strDataRow);
 							bw.newLine();
 						}
@@ -204,7 +204,7 @@ public class Report {
 					
 					try {
 						String strDataRow = StringUtils.join(formatRow(row.toArray()), ",");
-						if(strDataRow.Trim() != "" || strDataRow.Trim() != ","){
+						if(strDataRow.trim() != "" || strDataRow.trim() != ","){
 							bw.write(strDataRow);
 							bw.newLine();
 						}
